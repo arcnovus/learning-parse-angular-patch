@@ -1,0 +1,34 @@
+{
+  "name": "parse-angular-patch",
+  "homepage": "https://github.com/brandid/parse-angular-patch",
+  "authors": [
+    "@spacenick @arush"
+  ],
+  "main": "dist/parse-angular.js",
+  "description": "A patch for the Parse SDK to make it work natively and seamlessly with AngularJS",
+  "keywords": [
+    "parse",
+    "angular",
+    "angularjs",
+    "promises",
+    "promise",
+    "defer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "47aee29466",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "47aee29466f625cc9373d91cf3d5f2c26ec2b8b5"
+  },
+  "_source": "git://github.com/brandid/parse-angular-patch.git",
+  "_target": "*",
+  "_originalSource": "parse-angular-patch"
+}

@@ -1,0 +1,17 @@
+<div data-ng-controller="Home">
+    <select data-ng-model="salutation" data-ng-options="salutation.label for salutation in salutations">
+        <option value="">Salutation</option>
+    </select>
+    <input type="text" data-ng-model="model.fname" placeholder="first name..." />
+    <input type="text" data-ng-model="model.lname" placeholder="last name..." />
+
+    <button typ="button" data-ng-click="onSave()">save</button>
+    <br/>
+    <br/>
+    <ul>
+        <li data-ng-repeat="person in people" data-ng-data="who">
+            <a ng-click="editPerson($index)">{{person.get('salutation')}} {{person.get('fname')}} {{person.get('lname')}}</a>
+
+        </li>
+    </ul>
+</div>

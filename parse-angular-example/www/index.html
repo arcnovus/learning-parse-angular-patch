@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width">
+    <title>EZ Collector</title>
+
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/application.css" />
+
+    <script src="/javascripts/onerror.js"></script>
+    <script src="/javascripts/console.log.js"></script>
+
+    <!-- cordova.js is served from localhost to ensure the correct version -->
+    <script src="http://localhost/cordova.js"></script>
+    <script src="/vendor/steroids-js/steroids.js"></script>
+
+    <script src="/javascripts/application.js"></script>
+</head>
+
+<body>
+    <div class="content-padded">
+
+        <% yield.view %>
+
+    </div>
+</body>
+
+</html>

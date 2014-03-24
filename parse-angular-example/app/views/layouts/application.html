@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="MainApp">
+
+<head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>EZ Collector</title>
+
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/application.css" />
+
+    <script src="/javascripts/onerror.js"></script>
+    <script src="/javascripts/console.log.js"></script>
+
+    <!-- cordova.js is served from localhost to ensure the correct version -->
+    <script src="http://localhost/cordova.js"></script>
+
+    <script src="/vendor/steroids-js/steroids.js"></script>
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/vendor/hammerjs/hammer.min.js"></script>
+    <script src="/vendor/angular-hammer/angular-hammer.js"></script>
+    <script src="/vendor/underscore/underscore.js"></script>
+    <script src="/vendor/parse-js-sdk/parse.min.js"></script>
+    <script src="/vendor/parse-angular-patch/parse-angular.js"></script>
+
+    <script src="/models/models.js"></script>
+    <script src="/javascripts/application.js"></script>
+    <script src="/controllers/<%= yield.controller %>.js"></script>
+</head>
+
+<body>
+    <div class="content-padded">
+
+        <%=yield.view %>
+
+    </div>
+</body>
+
+</html>
