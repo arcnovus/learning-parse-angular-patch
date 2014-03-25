@@ -12,6 +12,8 @@ To get started:
 2. Open "application.js" and put in your Parse keys.
 3. Run, hack, love, hate, enjoy!
 
+We've put this on Git Hub as much to help others as to solicit help ourseleves. If you see something we could do a better way, please log an issue. We'd like to learn from our mistakes.
+
 **NB:** This project is in no way affiliated with parse-angular-patch or BRANDiD.
 
 Release Notes
