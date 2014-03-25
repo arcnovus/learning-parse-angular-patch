@@ -9,7 +9,7 @@
         app;
 
     // Put your Parse keys here.
-    Parse.initialize("TyfDCrcDQPRkUGnAz50DHESIOk4lvfMOEt3Xd02K", "t9FX9kEXiyJdRxgiszlonZyPdM8Ip7AbEnoVEZ3F");
+    Parse.initialize("PARSE-APP-ID", "PARSE-JS-API-KEY");
 
     // set up dependencies for the main Angular Module
     ngDependencies = [];
