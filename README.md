@@ -18,5 +18,6 @@ We've put this on Git Hub as much to help others as to solicit help ourseleves. 
 
 Release Notes
 ==============
-Currently focused on basic CRUD operations.
-Edit functionality still not working right.
+
+- Currently focused on basic CRUD operations.
+- Edit functionality still not working right.
