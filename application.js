@@ -8,7 +8,7 @@
 
 
 
-    Parse.initialize("TyfDCrcDQPRkUGnAz50DHESIOk4lvfMOEt3Xd02K", "t9FX9kEXiyJdRxgiszlonZyPdM8Ip7AbEnoVEZ3F");
+    Parse.initialize("APP-ID", "API-KEY");
 
     ngDependencies = [];
     ngDependencies.push('ngRoute');
