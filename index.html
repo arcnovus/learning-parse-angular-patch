@@ -4,26 +4,40 @@
 <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width">
-    <title>Learning Parse-Angular-Patch</title>
+    <title></title>
 
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/stylesheets/application.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="stylesheets/application.css" />
 
-    <script src="/vendor/angular/angular.min.js"></script>
-    <script src="/vendor/angular/angular-route.min.js"></script>
-    <script src="/vendor/underscore/underscore.js"></script>
-    <script src="/vendor/parse-js-sdk/parse.min.js"></script>
-    <script src="/vendor/parse-angular-patch/parse-angular.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular/angular-route.min.js"></script>
+    <script src="vendor/underscore/underscore.js"></script>
+    <script src="vendor/parse-js-sdk/parse.min.js"></script>
+    <script src="vendor/parse-angular-patch/parse-angular.js"></script>
 
-    <script src="/application.js"></script>
-    <script src="/controllers/home.js"></script>
-    <script src="/controllers/crud.js"></script>
+    <script src="application.js"></script>
+    <script src="controllers/home.js"></script>
+    <script src="controllers/crud.js"></script>
+    <script src="controllers/header.js"></script>
 </head>
 
-<body>
-    <div class="content-padded" data-ng-app="MainApp">
-        <div data-ng-view></div>
+<body></body>
+<div class="content-padded" data-ng-app="MainApp">
+    <!--HEADER-->
+    <div data-ng-controller="Header">
+        <!-- TITLE -->
+        <h1>{{route.current.title}}</h1>
+        <!--NAV-->
+        [
+        <span data-ng-show="route.current.name == 'Home'">Home</span><a data-ng-hide="route.current.name == 'Home'" href="/#/Home">Home</a>&nbsp;|
+        <a data-ng-hide="route.current.name == 'CRUD'" href="/#/crud">CRUD</a><span data-ng-show="route.current.name == 'CRUD'">CRUD</span>&nbsp;]
+        <br/>
+        <br/>
     </div>
+    <div data-ng-view>
+        <!--Body content goes in here-->
+    </div>
+</div>
 </body>
 
 </html>

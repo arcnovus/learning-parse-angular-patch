@@ -1,33 +1,30 @@
 <div data-ng-controller="Crud">
-    <h1>Crud Example &gt; People List</h1>
-    [
-    <a href="#/home">Home</a>&nbsp;| Crud ]
-    <br/>
-    <br/>
-    <div class="form-inline" role="form">
+    <button type="button" class="btn btn-primary btn-lg" data-ng-hide="showAdd" data-ng-click="onAdd()">Add new person</button>
+    <!-- Add Person Form -->
+    <div class="form-inline" role="form" data-ng-show="showAdd">
         <fieldset>
             <legend>Add New Person</legend>
-
             <div class="form-group">
-                <select data-ng-model="salutation" class="formControl" data-ng-options="s.label for s in salutations">
+                <select data-ng-model="salutation" class="formControl" style="min-width:150px" data-ng-options="s.label for s in salutations">
                     <option value="">Salutation</option>
                 </select>
             </div>
             <div class="form-group">
-                <input type="text" data-ng-model="model.fname" class="formControl" placeholder="first name..." />
+                <input type="text" data-ng-model="model.fname" class="formControl" style="min-width:200px" placeholder="first name..." />
             </div>
             <div class="form-group">
-                <input type="text" data-ng-model="model.lname" class="formControl" placeholder="last name..." />
+                <input type="text" data-ng-model="model.lname" class="formControl" style="min-width:200px" placeholder="last name..." />
             </div>
             <div class="btn-group">
-                <button typ="button" data-ng-click="onSave()" class="btn btn-xs btn-success">
-                    <span class="glyphicon glyphicon-plus"></span>&nbsp;add</button>
+                <button typ="button" data-ng-click="onSave()" class="btn btn-xs btn-success" style="min-width:100px">
+                    <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;save</button>
             </div>
         </fieldset>
     </div>
     <br/>
     <br/>
-
+    <!-- Grid of existing People -->
+    {{loadingMsg}}
     <fieldset data-ng-show="people.length >0">
         <legend>Existing people</legend>
         <table class="table">
@@ -35,30 +32,32 @@
                 <tr>
                     <th>Salutation</th>
                     <th>First Name</th>
-                    <th>Last NAme</th>
+                    <th>Last Name</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody data-ng-repeat-start="p in people" data-ng-data="who">
                 <tr>
+                    <!-- Salutation -->
                     <td style="min-width:95px;">
                         <span data-ng-hide="editRow == $index">{{p.get('salutation')}}</span>
                         <select data-ng-show="editRow == $index" data-ng-model="salutation" class="formControl" data-ng-options="s.label for s in salutations">
                             <option value="">--</option>
                         </select>
                     </td>
+                    <!-- First Name -->
                     <td style="min-width:115px;">
                         <span data-ng-hide="editRow == $index">{{p.get('fname')}}</span>
-
                         <input type="text" data-ng-show="editRow == $index" style="max-width:95px;" data-ng-model="model.fname" class="formControl" placeholder="first name..." />
-
                     </td>
+                    <!-- First Name -->
                     <td style="min-width:115px;">
                         <span data-ng-hide="editRow == $index">{{p.get('lname')}}</span>
                         <input type="text" data-ng-show="editRow == $index" data-ng-model="model.lname" style="max-width:95px;" class="formControl" placeholder="last name..." />
                     </td>
+                    <!-- Action Buttons -->
                     <td>
-                        <button class="btn btn-xs btn-primary" data-ng-click="editPerson($index)" data-ng-hide="editRow==$index" style="min-width:70px;">
+                        <button class="btn btn-xs btn-primary" data-ng-click="onEdit($index)" data-ng-hide="editRow==$index" style="min-width:70px;">
                             <span class="glyphicon glyphicon-pencil "></span>&nbsp;edit
                         </button>
                         <button class="btn btn-xs btn-danger" data-ng-hide="editRow==$index" data-ng-click="onDelete($index)" style="min-width:70px;">
@@ -67,7 +66,7 @@
                         <button class="btn btn-xs btn-success" data-ng-show="editRow==$index" data-ng-click="onSave()" style="min-width:70px;">
                             <span class="glyphicon glyphicon-floppy-disk "></span>&nbsp;save
                         </button>
-                        <button class="btn btn-xs btn-default" data-ng-show="editRow==$index" data-ng-click="cancelEdit($index)" style="min-width:70px;">
+                        <button class="btn btn-xs btn-default" data-ng-show="editRow==$index" data-ng-click="onCancel($index)" style="min-width:70px;">
                             <span class="glyphicon glyphicon-remove "></span>&nbsp;cancel
                         </button>
                     </td>
