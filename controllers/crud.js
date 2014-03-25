@@ -96,7 +96,7 @@
             model: PersonClass
         });
 
-        // Get the list of existing people from Parse ordered alphabetically (for fun)
+        // Get the list of existing people from Parse (ordered alphabetically for fun - NB: UPPER CASE is sorted ahead of lower case).
         query = new Parse.Query('Person');
         query.ascending('fname');
         query.find({
@@ -110,7 +110,9 @@
 
         // When the big "Add New Person" button is clicked
         $scope.onAdd = function () {
+            $scope.model = {}; // clear any data leftover from our last transaction
             $scope.showAdd = true; // show the Add Person form.
+            $scope.onCancel(); // hide any edit rows
         };
 
         // When the save button is clicked
@@ -119,6 +121,9 @@
             // set the id if this is an edit of an existing Person
             if ($scope.editRow > -1) {
                 $scope.model.id = $scope.people[$scope.editRow].id;
+                if ($scope.model.salutation.label) {
+                    $scope.model.salutation = $scope.model.salutation.label;
+                }
             }
             personObject.set($scope.model); // map our Angular object to our Parse object
             personObject.save().then(function () {
@@ -142,10 +147,13 @@
             $scope.showAdd = false; // hide the add form
             $scope.editRow = ix; // set the index of the row being edited
             var currentPerson = $scope.people[ix]; // grab the current person object 
-            $scope.model.fname = currentPerson.fname; // update scope fname
-            $scope.model.lname = currentPerson.lname; // update scope lname
+            $scope.model.fname = currentPerson.get('fname'); // update scope fname
+            $scope.model.lname = currentPerson.get('lname'); // update scope lname
+            $scope.model.salutation = currentPerson.get('salutation'); // BUG: this doesn't work and I don't know why, it should set the dropdown to the current salutation.
+
         };
 
+        //when the cancel button is clicked on a given row
         $scope.onCancel = function () {
             $scope.editRow = -1;
         };

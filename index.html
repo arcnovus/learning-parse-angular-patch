@@ -28,6 +28,7 @@
         <!-- TITLE -->
         <h1>{{route.current.title}}</h1>
         <!--NAV-->
+        <!--There are lots of ways to do a nav. This way is not great, but it works for now-->
         [
         <span data-ng-show="route.current.name == 'Home'">Home</span><a data-ng-hide="route.current.name == 'Home'" href="/#/Home">Home</a>&nbsp;|
         <a data-ng-hide="route.current.name == 'CRUD'" href="/#/crud">CRUD</a><span data-ng-show="route.current.name == 'CRUD'">CRUD</span>&nbsp;]

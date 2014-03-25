@@ -41,7 +41,7 @@
                     <!-- Salutation -->
                     <td style="min-width:95px;">
                         <span data-ng-hide="editRow == $index">{{p.get('salutation')}}</span>
-                        <select data-ng-show="editRow == $index" data-ng-model="salutation" class="formControl" data-ng-options="s.label for s in salutations">
+                        <select data-ng-show="editRow == $index" data-ng-model="model.salutation" class="formControl" data-ng-options="s.label for s in salutations">
                             <option value="">--</option>
                         </select>
                     </td>
@@ -66,14 +66,14 @@
                         <button class="btn btn-xs btn-success" data-ng-show="editRow==$index" data-ng-click="onSave()" style="min-width:70px;">
                             <span class="glyphicon glyphicon-floppy-disk "></span>&nbsp;save
                         </button>
-                        <button class="btn btn-xs btn-default" data-ng-show="editRow==$index" data-ng-click="onCancel($index)" style="min-width:70px;">
+                        <button class="btn btn-xs btn-default" data-ng-show="editRow==$index" data-ng-click="onCancel()" style="min-width:70px;">
                             <span class="glyphicon glyphicon-remove "></span>&nbsp;cancel
                         </button>
                     </td>
                 </tr>
             </tbody>
             <tfoot data-ng-repeat-end>
-
+                <!--Paging would be good-->
             </tfoot>
         </table>
     </fieldset>

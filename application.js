@@ -25,9 +25,9 @@
         function ($routeProvider) {
             $routeProvider.when('/home', {
                 templateUrl: 'views/home.html',
-                controller: 'Home', // not sure why we set this here and in the html?
-                name: 'Home',
-                title: 'Home Page'
+                controller: 'Home', // ?? not sure why we set this here AND in the html
+                name: 'Home', // to help with the nav
+                title: 'Home Page' // to set the page title on the header
             }).
             when('/crud', {
                 templateUrl: 'views/crud.html',
