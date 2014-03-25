@@ -21,3 +21,4 @@ Release Notes
 
 - Currently focused on basic CRUD operations.
 - Edit functionality still not working right.
+- No form validation of any kind, yet.
