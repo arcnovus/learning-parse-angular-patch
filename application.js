@@ -7,7 +7,7 @@
         app;
 
 
-
+    // Put your Parse keys here.
     Parse.initialize("APP-ID", "API-KEY");
 
     ngDependencies = [];
