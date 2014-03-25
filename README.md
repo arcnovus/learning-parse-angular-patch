@@ -8,7 +8,7 @@ A learning project for [parse-angular-patch](https://github.com/brandid/parse-an
 
 To get started:
 
-1. Fork me and clone.
+1. Fork me.
 2. Open "application.js" and put in your Parse keys.
 3. Run, hack, love, hate, enjoy!
 
