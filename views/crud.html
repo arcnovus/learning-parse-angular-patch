@@ -41,7 +41,7 @@
                     <!-- Salutation -->
                     <td style="min-width:95px;">
                         <span data-ng-hide="editRow == $index">{{p.get('salutation')}}</span>
-                        <select data-ng-show="editRow == $index" data-ng-model="model.salutation" class="formControl" data-ng-options="s.label for s in salutations">
+                        <select data-ng-show="editRow == $index" data-ng-model="model.salutation" class="formControl" data-ng-options="s.label as s.label fors in salutations">
                             <option value="">--</option>
                         </select>
                     </td>

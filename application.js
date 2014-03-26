@@ -9,7 +9,7 @@
         app;
 
     // Put your Parse keys here.
-    Parse.initialize("APP-ID", "JS-SDK-KEY");
+    Parse.initialize("appid", "jssdkkey");
 
     // set up dependencies for the main Angular Module
     ngDependencies = [];

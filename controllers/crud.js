@@ -150,8 +150,14 @@
             $scope.model.fname = currentPerson.get('fname'); // update scope fname
             $scope.model.lname = currentPerson.get('lname'); // update scope lname
             $scope.model.salutation = currentPerson.get('salutation'); // BUG: this doesn't work and I don't know why, it should set the dropdown to the current salutation.
-            $log.debug('cpsal: ' + currentPerson.get('salutation'));
-            $log.debug('smsal: ' + $scope.model.salutation);
+            //            $scope.salutation = {
+            //                label: currentPerson.get('salutation')
+            //            };
+            //            $log.debug('cpsal: ' + currentPerson.get('salutation'));
+            //            $log.debug('smsal: ' + $scope.model.salutation);
+            $log.debug('ssal: ' + $scope.salutation);
+
+
         };
 
         //when the cancel button is clicked on a given row
