@@ -20,5 +20,4 @@ Release Notes
 ==============
 
 - Currently focused on basic CRUD operations.
-- Edit functionality still not working right (the Salutation dropdown doesn't retain state).
 - No form validation of any kind, yet.
